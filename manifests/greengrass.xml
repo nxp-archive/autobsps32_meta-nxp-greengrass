@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <manifest>
+  <remote fetch="https://source.codeaurora.org/external/autobsps32" name="alb"/>
+  <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
+  <remote fetch="https://git.openembedded.org" name="oe"/>
+  <remote fetch="https://git.linaro.org/openembedded" name="linaro"/>
+
+  <remote fetch="https://source.codeaurora.org/external/qoriq" name="qoriq"/>
+  
+  <remote fetch="https://git.yoctoproject.org/git/meta-java" name="java"/>
+  <remote fetch="https://github.com/aws/meta-aws" name="aws"/>
+  <remote alias="origin" fetch="ssh://git@bitbucket.sw.nxp.com/~nxa11750/meta-nxp-greengrass.git" name="nxpgg"/>
+
+  <!-- The default revision and remote are applicable to the meta-alb layer -->
+  <default sync-j="2" revision="a780fe9c059094fc6badb815bbbb0d229ea54b39" remote="alb"/>
+
+  <project name="meta-alb" path="sources/meta-alb">
+    <copyfile dest="nxp-setup-alb.sh"    src="nxp-setup-alb.sh"/>
+  </project>
+
+  <!-- projects below synchronized with default.xml in LFAC -->
+  <project name="meta-freescale" path="sources/meta-freescale" remote="yocto" revision="0be39721cea6e04c589a419f4bb07fabd0da6704" upstream="zeus"/>
+  <project name="meta-openembedded" path="sources/meta-openembedded" remote="oe" revision="aad5b3d070cd8c58828b0975cf861d8ebc90f460" upstream="zeus"/>
+  <project name="poky" path="sources/poky" remote="yocto" revision="0275e68b0576cdefc19718e4b1977044f9f43f48" upstream="zeus"/>
+  <project name="meta-security" path="sources/meta-security" remote="yocto" revision="27ddb455543b670097e252ba0d0ad5b7e4101748" upstream="master"/>
+  <project name="meta-virtualization" path="sources/meta-virtualization" remote="yocto" revision="04e0d9de8cbaeb76aff6e78b90941a6e9a359b87" upstream="master"/>
+
+  <project name="meta-linaro" path="sources/meta-linaro" remote="linaro" revision="7603aadcc0c1544588203b6a13ecbf28c50d158d" upstream="zeus"/>
+  <project name="qoriq-components/meta-qoriq-demos" path="sources/meta-qoriq" remote="qoriq" revision="aa8d344cba2e91983083a8fb941dd538d74222d7" upstream="zeus"/>
+
+  <project name="meta-java" path="sources/meta-java" remote="java" revision="95d56a63cdbf1ed9db99a1f02075568fd45a668b" upstream="zeus"/>
+  <project name="meta-aws" path="sources/meta-aws" remote="aws" revision="75ccbc8defec0f85acd0ce6b4b1ce1941754ee30" upstream="master"/>
+  <project name="meta-nxp-greengrass" path="sources/meta-nxp-greengrass" remote="nxpgg" revision="4f07ab04c402a7240335151bda23f7c01a4308a8" upstream="bsp25.0"/>
+
+
+  </manifest>
