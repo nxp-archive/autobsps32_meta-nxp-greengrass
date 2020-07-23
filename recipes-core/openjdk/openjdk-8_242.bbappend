@@ -7,6 +7,6 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 SRC_URI_append = " \
         file://0001-openjdk-8-ARCHFLAG.patch \
 "
-do_compile_prepend() {
+do_compile_prepend_s32g274aevb() {
         export ARCHFLAGS=" ${TARGET_CXXFLAGS}"
 }
