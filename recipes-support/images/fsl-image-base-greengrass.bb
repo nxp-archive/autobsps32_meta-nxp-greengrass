@@ -10,6 +10,7 @@ IMAGE_INSTALL_append = " python3"
 IMAGE_INSTALL_append = " bash"
 IMAGE_INSTALL_append = " nodejs"
 IMAGE_INSTALL_append = " nxp-networking"
+IMAGE_INSTALL_append = " os-release"
 
 IMAGE_NAME = "${MACHINE}-greengrass"
 IMAGE_LINK_NAME = "${MACHINE}-${IMAGE_BASENAME}"
