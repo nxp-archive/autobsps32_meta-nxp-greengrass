@@ -10,3 +10,7 @@ SRC_URI_append = " \
 do_compile_prepend_s32g274aevb() {
         export ARCHFLAGS=" ${TARGET_CXXFLAGS}"
 }
+
+do_compile_prepend_s32g274ardb() {
+        export ARCHFLAGS=" ${TARGET_CXXFLAGS}"
+}
