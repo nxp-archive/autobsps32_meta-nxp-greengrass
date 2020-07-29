@@ -47,7 +47,7 @@ fi
 
 if  [ -f "${IMAGE_ROOTFS}/etc/init.d/cgroups-init" ]; then
 
-sed -i '/bin\/cgroups-mount/a echo\ \1 \>\/sys\/fs\/cgroup\/memory\/memory.use_hierarchy' ${IMAGE_ROOTFS}/etc/init.d/cgroups-init
+sed -i '/bin\/cgroups-mount/a echo\ \1 \>\/sys\/fs\/cgroup\/memory.use_hierarchy' ${IMAGE_ROOTFS}/etc/init.d/cgroups-init
 
 fi
 
