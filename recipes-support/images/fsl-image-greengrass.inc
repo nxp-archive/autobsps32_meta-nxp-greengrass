@@ -1,3 +1,7 @@
+#
+# Copyright 2020 NXP
+#
+
 DESCRIPTION = "Greengrass Image"
 LICENSE = "MIT"
 
