@@ -22,6 +22,6 @@ source nxp-setup-alb.sh -m s32g274aevb -b build_greengrass -e "meta-aws meta-jav
 The layer provides an extra image with Greengrass support. 
 
 ```shell
-bitbake -f fsl-image-base-greengrass
+bitbake fsl-image-auto-greengrass
 ```
 
