@@ -13,6 +13,9 @@ IMAGE_INSTALL_append = " bash"
 IMAGE_INSTALL_append = " nodejs"
 IMAGE_INSTALL_append = " nxp-networking"
 IMAGE_INSTALL_append = " os-release"
+IMAGE_INSTALL_append = " ntp"
+IMAGE_INSTALL_append = " python-pip"
+IMAGE_INSTALL_append = " python3-pip"
 
 ROOTFS_POSTPROCESS_COMMAND += " \
     setup_volatiles; \
