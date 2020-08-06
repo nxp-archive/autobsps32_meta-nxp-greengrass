@@ -29,7 +29,7 @@
 
   <project name="meta-java" path="sources/meta-java" remote="yocto" revision="95d56a63cdbf1ed9db99a1f02075568fd45a668b" upstream="zeus"/>
   <project name="meta-aws" path="sources/meta-aws" remote="aws" revision="75ccbc8defec0f85acd0ce6b4b1ce1941754ee30" upstream="master"/>
-  <project name="meta-nxp-greengrass" path="sources/meta-nxp-greengrass" remote="nxpgg" revision="70d5179e7ec1d7f74469c98f994b0ae53c958c3f" upstream="bsp25.0"/>
+  <project name="meta-nxp-greengrass" path="sources/meta-nxp-greengrass" remote="nxpgg" revision="9d4f6f418c090ab62fd003c2ec0c10a4438626a6" upstream="bsp25.0"/>
 
 
   </manifest>
