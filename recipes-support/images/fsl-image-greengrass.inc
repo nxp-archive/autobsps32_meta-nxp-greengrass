@@ -21,6 +21,7 @@ IMAGE_ROOTFS_EXTRA_SPACE = "2097152"
 
 ROOTFS_POSTPROCESS_COMMAND += " \
     setup_volatiles; \
+    config_ntpserver; \
 "
 
 setup_volatiles() {
@@ -58,3 +59,16 @@ fi
 
 }
 
+config_ntpserver() {
+
+if [ -f "${IMAGE_ROOTFS}/etc/ntp.conf" ]; then
+
+sed -i -e '/server/d' ${IMAGE_ROOTFS}/etc/ntp.conf
+cat ${IMAGE_ROOTFS}/etc/ntp.conf
+cat >> ${IMAGE_ROOTFS}/etc/ntp.conf <<-_EOF_
+server pool.ntp.org
+_EOF_
+
+fi
+
+}
