@@ -8,7 +8,9 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
-SRC_URI = "file://nxp_networking.sh"
+SRC_URI_s32g274aevb = "file://nxp_networking.sh"
+SRC_URI_s32g274ardb = "file://nxp_networking.sh"
+
 
 inherit update-rc.d
 INITSCRIPT_PACKAGES = "${PN}"
