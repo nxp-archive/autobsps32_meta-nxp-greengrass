@@ -16,6 +16,9 @@ IMAGE_INSTALL_append = " os-release"
 IMAGE_INSTALL_append = " ntp"
 IMAGE_INSTALL_append = " python-pip"
 IMAGE_INSTALL_append = " python3-pip"
+IMAGE_INSTALL_append = " python3-graphviz"
+IMAGE_INSTALL_append = " mxnet"
+IMAGE_INSTALL_append = " tensorflow"
 
 IMAGE_ROOTFS_EXTRA_SPACE = "2097152"
 
