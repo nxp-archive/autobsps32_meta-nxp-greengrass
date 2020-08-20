@@ -39,6 +39,7 @@ EXTRA_OECMAKE += " -DUSE_SSE=OFF \
 -DUSE_LAPACK=OFF \
 -DBLAS=open"
 
+INSANE_SKIP_${PN} = "dev-so"
 ALLOW_EMPTY_${PN} = "1"
 INSANE_SKIP_${PN}-dev += "installed-vs-shipped" 
 PACKAGES = "${PN} ${PN}-dev"
@@ -51,9 +52,14 @@ do_compile_prepend () {
 
 do_install() {
 	install -d -m 0755 ${D}${libdir}
+	install -d ${D}/mxnet/python
+	install -d ${D}/mxnet/contrib/tvmop
+	cp -R --no-dereference --preserve=mode,links -v ${S}/python/* ${D}/mxnet/python/
+	cp -R --no-dereference --preserve=mode,links -v ${S}/contrib/tvmop/* ${D}/mxnet/contrib/tvmop
 	cp ${B}/libmxnet.so ${D}${libdir}
+	ln -sf /usr/lib/libmxnet.so ${D}/mxnet/python/mxnet/libmxnet.so
 }
 
-FILES_${PN} = "${libdir}/libmxnet.so "
+FILES_${PN} = "${libdir}/libmxnet.so /mxnet/python /mxnet/contrib/tvmop"
  
 INSANE_SKIP_${PN}-dev += "dev-elf"
