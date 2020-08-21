@@ -14,7 +14,7 @@ repo sync
 Configure your machine and add the extra layers. 
 
 ```shell
-source nxp-setup-alb.sh -m s32g274aevb -b build_greengrass -e "meta-aws meta-java meta-nxp-greengrass"
+source nxp-setup-alb.sh -m s32g274aevb -b build_greengrass -e "meta-aws meta-java meta-nxp-greengrass meta-tensorflow"
 ```
 
 ### Build the image
