@@ -1,3 +1,4 @@
+# Copyright 2020 NXP
 SUMMARY = "MXNET Package"
 SECTION = "libs"
 LICENSE = "Apache-2.0"

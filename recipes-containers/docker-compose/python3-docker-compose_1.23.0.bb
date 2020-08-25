@@ -1,3 +1,4 @@
+# Copyright 2020 NXP
 SUMMARY = "Multi-container orchestration for Docker"
 HOMEPAGE = "https://www.docker.com/"
 LICENSE = "Apache-2.0"
