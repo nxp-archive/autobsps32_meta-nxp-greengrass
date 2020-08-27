@@ -30,7 +30,7 @@
   <project name="meta-java" path="sources/meta-java" remote="yocto" revision="95d56a63cdbf1ed9db99a1f02075568fd45a668b" upstream="zeus"/>
   <project name="meta-tensorflow" path="sources/meta-tensorflow" remote="yocto" revision="17fe99fa101a51d62e55e0d4372b9301f1f5fbe3" upstream="master"/>
   <project name="meta-aws" path="sources/meta-aws" remote="aws" revision="75ccbc8defec0f85acd0ce6b4b1ce1941754ee30" upstream="master"/>
-  <project name="meta-nxp-greengrass" path="sources/meta-nxp-greengrass" remote="nxpgg" revision="78822d9abc5132fc41933635c28c3f1557617f5e" upstream="bsp25.0"/>
+  <project name="meta-nxp-greengrass" path="sources/meta-nxp-greengrass" remote="nxpgg" revision="9000412d9eadf082f186e82f133a8249b0037798" upstream="bsp25.0"/>
 
 
   </manifest>
