@@ -14,3 +14,7 @@ do_compile_prepend_s32g274aevb() {
 do_compile_prepend_s32g274ardb() {
         export ARCHFLAGS=" ${TARGET_CXXFLAGS}"
 }
+
+do_compile_prepend_s32g274ardb2() {
+        export ARCHFLAGS=" ${TARGET_CXXFLAGS}"
+}
