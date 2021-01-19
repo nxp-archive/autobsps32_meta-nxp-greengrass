@@ -4,11 +4,9 @@
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
+#FILESEXTRAPATHS_prepend := "${THISDIR}/${BPN}:${THISDIR}/files:"
+DELTA_KERNEL_DEFCONFIG_append += " greengrass.cfg"
 SRC_URI_append = " \
-	file://greengrass_defconfig \
+	file://build/greengrass.cfg \
 "
 
-do_configure_append() {
-
-cp ${WORKDIR}/greengrass_defconfig ${WORKDIR}/build/.config
-}
