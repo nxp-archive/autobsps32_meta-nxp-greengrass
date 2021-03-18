@@ -7,9 +7,15 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=d062b5a0431dc3d14e07b356e09ed27b"
 #LIC_FILES_CHKSUM = "file://LICENSE;md5=6b7b3af6e4e08c3a7e0e027a6809cad1"
 #LIC_FILES_CHKSUM = "file://LICENSE;md5=6e477e47e101063cf3370e2495c85d5e" 
 #LIC_FILES_CHKSUM = "file://LICENSE;md5=bea76d64fe6f7e778c44003c8bdd7bdb"
-DEPENDS = "libopenblas glib-2.0 glibc "
+DEPENDS = " openblas glib-2.0 glibc "
+
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
  
 SRC_URI := "https://archive.apache.org/dist/incubator/mxnet/${PV}/apache-${PN}-src-${PV}-incubating.tar.gz "
+
+SRC_URI_append = " \
+        file://0001-mxnet-solve-undefined-reference.patch \
+"
 
 SRC_URI[md5sum] = "76802d6b14cd45c27f063b2bba3c9a14"
 SRC_URI[sha256sum] = "01eb06069c90f33469c7354946261b0a94824bbaf819fd5d5a7318e8ee596def"
@@ -45,7 +51,9 @@ ALLOW_EMPTY_${PN} = "1"
 INSANE_SKIP_${PN}-dev += "installed-vs-shipped" 
 PACKAGES = "${PN} ${PN}-dev"
 INSANE_SKIP_${PN} += "installed-vs-shipped" 
-
+INSANE_SKIP_${PN} += "file-rdeps"
+do_package_qa[noexec] = "1"
+EXCLUDE_FROM_SHLIBS = "1"
  
 do_compile_prepend () {
         find ${S}/../build -name flags.* -type f -exec sed -i -e 's/-isystem/-I/g' {} \;

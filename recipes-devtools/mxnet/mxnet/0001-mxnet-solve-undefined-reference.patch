@@ -1,0 +1,39 @@
+From 6d4a31df4cc97ef139d4e593180bf096fb034aea Mon Sep 17 00:00:00 2001
+From: Alejandro Lozano <alejandro.lozano@nxp.com>
+Date: Wed, 17 Mar 2021 16:49:00 -0600
+Subject: [PATCH] mxnet: solve undefined reference
+
+---
+ src/operator/tensor/elemwise_binary_broadcast_op.h        | 2 +-
+ src/operator/tensor/elemwise_binary_broadcast_op_basic.cu | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/operator/tensor/elemwise_binary_broadcast_op.h b/src/operator/tensor/elemwise_binary_broadcast_op.h
+index ffd0f12..923251d 100644
+--- a/src/operator/tensor/elemwise_binary_broadcast_op.h
++++ b/src/operator/tensor/elemwise_binary_broadcast_op.h
+@@ -33,7 +33,7 @@
+ #include <utility>
+ #include "../mshadow_op.h"
+ #include "../elemwise_op_common.h"
+-#include "./elemwise_binary_op.h"
++#include "./elemwise_binary_op-inl.h"
+ #include "../operator_common.h"
+ #include "broadcast_reduce-inl.h"
+ 
+diff --git a/src/operator/tensor/elemwise_binary_broadcast_op_basic.cu b/src/operator/tensor/elemwise_binary_broadcast_op_basic.cu
+index aa0850a..75ab2ae 100644
+--- a/src/operator/tensor/elemwise_binary_broadcast_op_basic.cu
++++ b/src/operator/tensor/elemwise_binary_broadcast_op_basic.cu
+@@ -23,7 +23,7 @@
+  * \brief GPU Implementation of basic functions for elementwise binary broadcast operator.
+  */
+ #include "./elemwise_unary_op.h"
+-#include "./elemwise_binary_op.h"
++#include "./elemwise_binary_op-inl.h"
+ #include "./elemwise_binary_broadcast_op.h"
+ 
+ namespace mxnet {
+-- 
+2.17.1
+
