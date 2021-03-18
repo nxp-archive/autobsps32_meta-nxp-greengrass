@@ -19,6 +19,7 @@ IMAGE_INSTALL_append = " python3-pip"
 IMAGE_INSTALL_append = " python3-graphviz"
 IMAGE_INSTALL_append = " mxnet"
 IMAGE_INSTALL_append = " tensorflow"
+IMAGE_INSTALL_append = " openblas"
 IMAGE_INSTALL_append = " sudo"
 
 IMAGE_ROOTFS_EXTRA_SPACE = "2097152"
