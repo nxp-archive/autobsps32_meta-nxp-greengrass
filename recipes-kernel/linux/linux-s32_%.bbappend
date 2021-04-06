@@ -6,7 +6,9 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 #FILESEXTRAPATHS_prepend := "${THISDIR}/${BPN}:${THISDIR}/files:"
 DELTA_KERNEL_DEFCONFIG_append += " greengrass.cfg"
+DELTA_KERNEL_DEFCONFIG_append += " coraltpu.cfg"
 SRC_URI_append = " \
 	file://build/greengrass.cfg \
+	file://build/coraltpu.cfg \
 "
 
