@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <manifest>
+  <remote fetch="https://source.codeaurora.org/external/autobsps32" name="alb"/>
+  <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
+  <remote fetch="https://git.openembedded.org" name="oe"/>
+  <remote fetch="https://git.linaro.org/openembedded" name="linaro"/>
+
+  <remote fetch="https://source.codeaurora.org/external/qoriq" name="qoriq"/>
+  
+  <remote fetch="https://github.com/aws" name="aws"/>
+  <remote fetch="https://github.com/kraj" name="clang"/>
+
+  <!-- The default revision and remote are applicable to the meta-alb layer -->
+  <default sync-j="2" revision="66faaf88ee3e44faca9db5c9cd774fadb07c8442" remote="alb"/>
+
+  <project name="meta-alb" path="sources/meta-alb">
+    <copyfile dest="nxp-setup-alb.sh"    src="nxp-setup-alb.sh"/>
+  </project>
+
+  <!-- projects below synchronized with default.xml in LFAC -->
+  <project name="meta-freescale" path="sources/meta-freescale" remote="yocto" revision="41d4f625c6db7a778f0f9a735c2cb48e023bc49b"/>
+  <project name="meta-linaro" path="sources/meta-linaro" remote="linaro" revision="11091b487e1ad4c6a4adfac34d958a3d9d9ccd17"/>
+  <project name="meta-python2" path="sources/meta-openembedded/meta-python2" remote="oe" revision="c43c29e57f16af4e77441b201855321fbd546661"/>
+  <project name="meta-security" path="sources/meta-security" remote="yocto" revision="d0adcbaa53ffdf5618a90456b93ec7d25612b541"/>
+  <project name="meta-virtualization" path="sources/meta-virtualization" remote="yocto" revision="74e0b8d2acc6b9bbc0345a500a700932d70772f4"/>
+  <project name="meta-openembedded" path="sources/meta-openembedded" remote="oe" revision="ac4ccd2fbbb599d75ca4051911fcbaca39dbe6d7"/>
+  <project name="poky" path="sources/poky" remote="yocto" revision="671fe65b31ca35379916a180415e1ab7d47bd51b"/>
+
+  <!-- projects below are not updated for gatesgarth -->
+  <project name="qoriq-components/meta-qoriq" path="sources/meta-qoriq" remote="qoriq" revision="e381f3eb56b75a4f5f54092952cbb30d8ae8cbcf" upstream="dunfell"/>
+
+
+  <project name="meta-java" path="sources/meta-java" remote="yocto" revision="6e84638d77ac921aac46649095bca5ddbde94d2a" upstream="gatesgarth"/>
+  <project name="meta-tensorflow" path="sources/meta-tensorflow" remote="yocto" revision="17fe99fa101a51d62e55e0d4372b9301f1f5fbe3" upstream="master"/>
+  <project name="meta-aws" path="sources/meta-aws" remote="aws" revision="a01fd122960129efd89a3da4ef593b70a09559d7" upstream="gatesgarth"/>
+  <project name="meta-nxp-greengrass" path="sources/meta-nxp-greengrass" remote="alb" revision="259b093451c0c9454a371533a79f06ce50f715e6" upstream="bsp29.0-hf1"/>
+  <project name="meta-clang" path="sources/meta-clang" remote="clang" revision="04a1194c78563524659f27941304e564956792b1" upstream="gatesgarth"/>
+
+  </manifest>
